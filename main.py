@@ -36,4 +36,4 @@ transl_author = translator.translate(text=author, dest=language).text
 transl_date = translator.translate(text=date, dest=language).text
 transl_text = translator.translate(text=text, dest=language).text
 
-print(f"{transl_title}\n\n{author_ru}\n{transl_date}\n\n{transl_text}")
+print(f"{transl_title}\n\n{transl_author}\n{transl_date}\n\n{transl_text}")
