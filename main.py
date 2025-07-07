@@ -1,5 +1,6 @@
-import googletrans
+from googletrans import Translator, LANGUAGES
 
+translator = Translator()
 
 title = "Music’s Impact and Influence on Everyday Life"
 author = "Bryleigh Conley, Reporter"
@@ -26,4 +27,13 @@ Whenever you listen to music whether it be live or not, you can always find new 
 
 Even though my taste in music has changed and yours may too, it’s still comforting and almost nostalgic listening to that one artist, just like how we still listen to music from when we were younger to remember the past, especially the one who helped my younger self and being able to see just how much I have improved and matured since then. I don’t know where I would be now if I hadn’t found her."""
 
-print(f"{title}\n\n{author}\n{date}\n\n{text}")
+print(f"Список доступных языков:\n {LANGUAGES}")
+language = input("Впишите один из доступных языков (два символа): ")
+
+
+transl_title = translator.translate(text=title, dest=language).text
+transl_author = translator.translate(text=author, dest=language).text
+transl_date = translator.translate(text=date, dest=language).text
+transl_text = translator.translate(text=text, dest=language).text
+
+print(f"{transl_title}\n\n{author_ru}\n{transl_date}\n\n{transl_text}")
