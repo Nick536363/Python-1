@@ -30,9 +30,6 @@ Even though my taste in music has changed and yours may too, it’s still comfor
 print(f"Список доступных языков:\n {LANGUAGES}")
 
 language = input("Впишите один из доступных языков (два символа): ")
-transl_title = translator.translate(text=title, dest=language).text
-transl_author = translator.translate(text=author, dest=language).text
-transl_date = translator.translate(text=date, dest=language).text
-transl_text = translator.translate(text=text, dest=language).text
+transl_title,transl_author,transl_date,transl_text = translator.translate(text=title, dest=language).text, translator.translate(text=author, dest=language).text, translator.translate(text=date, dest=language).text, translator.translate(text=text, dest=language).text
 
 print(f"{transl_title}\n\n{transl_author}\n{transl_date}\n\n{transl_text}")
