@@ -2,9 +2,9 @@ from googletrans import Translator, LANGUAGES
 
 translator = Translator()
 
-title = "Music’s Impact and Influence on Everyday Life"
+title = "Music’s Impact and Influence on Everyday Life\n"
 author = "Bryleigh Conley, Reporter"
-date = "April 12, 2023"
+date = "April 12, 2023\n"
 text = """As a person who loves music and even got into playing an instrument myself, it does have an influence on my everyday life. I’m constantly listening to music whether it be while working during class, in the car on my way home, or just while practicing playing the guitar. Music is all around the world and one of the most popular forms of entertainment and escape. It consists of many different styles and opinions, whether it be just personal opinion or even a part of your culture.
 
 Everyone has their own taste and opinions on music, which is why it’s one of the most common things to talk about. Just like how we all hear people say, “a lot can be said about a person based on their music taste,” and it’s fun finding people who share common interests with you, such as a favorite song or favorite song artist, or maybe something just as simple as liking the same music genre. It can also have an effect on people’s emotions and mind, as well as improving mental health. 
@@ -30,6 +30,6 @@ Even though my taste in music has changed and yours may too, it’s still comfor
 print(f"Список доступных языков:\n {LANGUAGES}")
 
 language = input("Впишите один из доступных языков (два символа): ")
-transl_title,transl_author,transl_date,transl_text = translator.translate(text=title, dest=language).text, translator.translate(text=author, dest=language).text, translator.translate(text=date, dest=language).text, translator.translate(text=text, dest=language).text
 
-print(f"{transl_title}\n\n{transl_author}\n{transl_date}\n\n{transl_text}")
+translated_text = translator.translate("\n".join([title, author, date, text]), dest=language)
+print(translated_text.text)
